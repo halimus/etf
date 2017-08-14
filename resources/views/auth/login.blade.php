@@ -1,68 +1,72 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+<div id="main">
+    <div id="wrapper" class="Center-Container">
+        <div id="page-content-wrapper">
+            <div id="page-content" >
+                <div class="container">
+                    <div class="col">
+                        <div class="col-md-6 col-sm-offset-3 box">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                            <?php if(isset($this->notif) and !empty($this->notif)){ ?>
+                            <div class="alert alert-<?php  ?> alert-dismissable">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                <?php echo $this->notif['msg']; ?>
+                            </div>
+                            <?php } ?>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                            <div id="loginbox" style="" class="mainbox">                    
+                                <div class="panel panel-primary" >
+                                    <div class="panel-heading" style="height: 40px;">
+                                        <div class="panel-title pull-left">Test Assignment - Login</div>
+                                    </div>     
+                                    <div style="padding-top:40px" class="panel-body" >
+                                        <form method="POST" action="login" class="form-horizontal" role="form">
+                                            <div style="margin-bottom: 25px" class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input type="email" class="form-control" id="email" name="email" value="<?php echo @$_POST['email'];?>" placeholder="Email address" required>                                        
+                                            </div>
+                                            <div style="margin-bottom: 25px" class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div style="margin-top:10px" class="form-group">
+                                                <div class="col-sm-12 controls">
+                                                    <button type="submit" class="btn btn-primary">Sign In</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-12 control">
+                                                    <div style="border-top: 1px solid#888; padding-top:15px;font-size:95%" >
+                                                        <a href="{{ route('password.request') }}">Forgot password ?</a>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </form>     
+                                    </div>                     
+                                </div>  
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+            </div><!-- #page-content -->
+        </div><!-- #page-content-wrapper -->
+    </div><!-- #wrapper -->
+</div><!-- #main -->
+
+
+
+
+
+
 @endsection
