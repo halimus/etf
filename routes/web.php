@@ -12,9 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
 });
 
 Auth::routes();
 
+
+//Home routes
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Etf routes
+Route::get('/etf', 'EtfController@index');
+
+
+//Users routes
+Route::get('/users', 'UsersController@index');
+
+
+
+//About routes
+Route::get('/about', 'AboutController@index');
