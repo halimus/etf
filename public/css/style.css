@@ -122,8 +122,6 @@ body {
 
 /*--------------- end navbar-custom -------------*/
 
-
-
 #wrapper {
     /*padding-bottom:50px;  Height of the footer element */
     padding: 1px 0px 5px 0px;
@@ -153,6 +151,36 @@ body {
     }
     
 }    
+
+
+.right-menu{float: right; font-size: 18px;}
+.right-menu a{text-decoration: none}
+
+
+
+.form .form-title{
+    line-height: 300%;
+}
+.form em{
+    color: red;
+    margin-top: 1px;
+    position: absolute;
+    margin-left: 2px;
+    font-size: 1.1em;
+}
+ul.errors{
+    list-style-type: none;
+    padding-left: 25px;
+}
+.form-error{
+   color: #A94442;
+   font-weight: normal;
+   font-size: 0.9em;
+}
+
+.btn-custom{
+    min-width: 150px;
+}
 
 
 /*---------------------- form search -------------------------------*/
