@@ -27,11 +27,13 @@ Route::get('/users', 'UsersController@index');
 Route::get('/users/getdata', 'UsersController@getUsers');
 Route::get('users/create', 'UsersController@create');
 Route::post('users/create', 'UsersController@store');
+Route::get('users/{id}', 'UsersController@show');
+
+Route::get('users/{id}/edit/', 'UsersController@edit');
+Route::post('users/{id}/edit/', 'UsersController@update');
 
 
-//Route::get('users/{id}', 'UsersController@show');
-//Route::get('users/edit/{id}', 'UsersController@edit');
-//Route::post('users/edit/{id}', 'UsersController@update');
+
 //Route::delete('users/{id}', 'UsersController@destroy');
 
 

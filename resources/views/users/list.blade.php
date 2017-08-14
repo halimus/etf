@@ -9,42 +9,42 @@
             </h3> 
         </div>
         
-        <div class="col-md-12">
+        <div class="col-md-12 table-responsive">
             
             @if(count($users))
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Created at</th>
-                        <th>Updated at</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($users as $user)    
-                    <tr>
-                        <td>{{ $user->user_id }}</td>
-                        <td>{{ $user->username }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ Carbon\Carbon::parse($user->created_at)->format('m/d/Y H:m:s') }}</td>
-                        <td>{{ Carbon\Carbon::parse($user->updated_at)->format('m/d/Y H:m:s') }}</td>
-                        <td>
-                            <a href="{{ url("users/$user->user_id/edit")}}" class="btn btn-info" role="button">edit</a>
-                        </td>
-                        <td>
-                            {{ Form::open(array('url' => 'users/' . $user->user_id)) }}
-                            {{ Form::hidden('_method', 'DELETE') }}
-                            {{ Form::submit('delete', array('class' => 'btn btn-danger')) }}
-                            {{ Form::close() }}
-                        </td>
-                    </tr>
-                    @endforeach   
-                </tbody>
-            </table>
+                <table class="table table-bordered tripe">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Created at</th>
+                            <th>Updated at</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($users as $user)    
+                        <tr>
+                            <td>{{ $user->user_id }}</td>
+                            <td>{{ $user->username }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ Carbon\Carbon::parse($user->created_at)->format('m/d/Y H:m:s') }}</td>
+                            <td>{{ Carbon\Carbon::parse($user->updated_at)->format('m/d/Y H:m:s') }}</td>
+                            <td>
+                                <a href="{{ url("users/$user->user_id/edit")}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-pencil"></i></a>
+                            </td>
+                            <td>
+                                {{ Form::open(array('url' => 'users/' . $user->user_id)) }}
+                                {{ Form::hidden('_method', 'DELETE') }}
+                                {{ Form::button('<i class="fa fa-trash-o"></i>', ['class' => 'btn btn-danger btn-sm', 'type' => 'submit']) }} 
+                                {{ Form::close() }}
+                            </td>
+                        </tr>
+                        @endforeach   
+                    </tbody>
+                </table>
             @else
                 <div class="errors alert alert-warning alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -54,7 +54,7 @@
             
             
             
-            <div class="col-xs-12 table-responsive">
+<!--            <div class="col-xs-12 table-responsive">
                 
                 
                 
@@ -70,7 +70,7 @@
                         </tr>
                     </thead>
                 </table>
-            </div>
+            </div>-->
             
         </div>
         

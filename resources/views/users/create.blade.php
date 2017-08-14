@@ -34,7 +34,7 @@
                         <div class="row form-group">
                             <div class="col-md-6 {{ $errors->has('username') ? ' has-error' : '' }}">
                                 <label>Name</label><em>*</em>
-                                <input type="text" name="username" id="username" class="form-control" value="{{ old('username') ? old('username'):@$username }}">
+                                <input type="text" name="username" id="username" class="form-control" value="{{ old('username') ? old('username'):@$user->username }}">
                                 @if ($errors->has('username'))
                                 <span class="form-error">
                                     {{ $errors->first('username') }}
@@ -45,7 +45,7 @@
                         <div class="row form-group">
                             <div class="col-md-6 {!! ($errors->has('email')) ? ' has-error' : '' !!}">
                                 <label>Email</label><em>*</em>
-                                <input type="email" name="email" id="email" class="form-control" value="{{ old('email') ? old('email'):@$email }}">
+                                <input type="email" name="email" id="email" class="form-control" value="{{ old('email') ? old('email'):@$user->email }}">
                                 @if ($errors->has('email'))
                                 <span class="help-block">
                                     {{ $errors->first('email') }}
@@ -57,7 +57,7 @@
                         <div class="row form-group">
                             <div class="col-md-6 {!! ($errors->has('password')) ? ' has-error' : '' !!}">
                                 <label>Password</label><em>*</em>
-                                <input type="password" name="password" id="password" class="form-control" value="{{ old('password') ? old('password'):@$password }}">
+                                <input type="password" name="password" id="password" class="form-control" value="{{ old('password')}}">
                                 @if ($errors->has('password'))
                                 <span class="help-block">
                                     {{ $errors->first('password') }}
@@ -66,7 +66,7 @@
                             </div>
                             <div class="col-md-6 {!! ($errors->has('password_confirmation')) ? ' has-error' : '' !!}">
                                 <label>Confirm Password</label><em>*</em>
-                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" value="{{ old('password_confirmation') ? old('password_confirmation'):@$password }}">
+                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" value="{{ old('password_confirmation')}}">
                                 @if ($errors->has('password_confirmation'))
                                 <span class="help-block">
                                     {{ $errors->first('password_confirmation') }}
@@ -83,9 +83,6 @@
                     </div>
                 </div>
             </form>
-
-
-
 
         </div>
 
