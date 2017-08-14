@@ -31,10 +31,7 @@ Route::get('users/{id}', 'UsersController@show');
 
 Route::get('users/{id}/edit/', 'UsersController@edit');
 Route::post('users/{id}/edit/', 'UsersController@update');
-
-
-
-//Route::delete('users/{id}', 'UsersController@destroy');
+Route::delete('users/{id}', 'UsersController@destroy');
 
 
 //About routes

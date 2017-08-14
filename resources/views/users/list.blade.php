@@ -12,7 +12,7 @@
         <div class="col-md-12 table-responsive">
             
             @if(count($users))
-                <table class="table table-bordered tripe">
+                <table id="datatable" class="table table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -20,8 +20,8 @@
                             <th>Email</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th style="width: 60px">Edit</th>
+                            <th style="width: 60px">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,13 +33,16 @@
                             <td>{{ Carbon\Carbon::parse($user->created_at)->format('m/d/Y H:m:s') }}</td>
                             <td>{{ Carbon\Carbon::parse($user->updated_at)->format('m/d/Y H:m:s') }}</td>
                             <td>
-                                <a href="{{ url("users/$user->user_id/edit")}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ url("users/$user->user_id/edit")}}" class="btn btn-success" role="button"><i class="fa fa-pencil"></i></a>
                             </td>
                             <td>
                                 {{ Form::open(array('url' => 'users/' . $user->user_id)) }}
                                 {{ Form::hidden('_method', 'DELETE') }}
-                                {{ Form::button('<i class="fa fa-trash-o"></i>', ['class' => 'btn btn-danger btn-sm', 'type' => 'submit']) }} 
+                                {{ Form::button('<i class="fa fa-trash-o"></i>', ['class' => 'btn btn-danger btn-block', 'type' => 'submit']) }} 
                                 {{ Form::close() }}
+                                
+                                <!--<button class="btn btn-danger btn" type="button"><i class="fa fa-trash-o"></i></button>-->
+                                
                             </td>
                         </tr>
                         @endforeach   
