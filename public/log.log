@@ -13,10 +13,10 @@
 *  subjectAltName: host "www.spdrs.com" matched cert's "www.spdrs.com"
 *  issuer: C=US; O=Symantec Corporation; OU=Symantec Trust Network; CN=Symantec Class 3 Secure Server CA - G4
 *  SSL certificate verify ok.
-> GET /product/fund.seam?ticker=ASDASDASD HTTP/1.1
+> GET /product/fund.seam?ticker=DGT HTTP/1.1
 Host: www.spdrs.com
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
-Cookie: InitialURL=us.spdrs.com/exceptions/error.seam?cid=295588; disclaimer=accepted; geoloc=us:en; role=def
+Cookie: InitialURL=us.spdrs.com/exceptions/error.seam?cid=295595; disclaimer=accepted; geoloc=us:en; role=def
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Cache-Control: max-age=0
 Connection: keep-alive
@@ -27,18 +27,18 @@ Accept-Language: en-us,en;q=0.5
 < HTTP/1.1 301 Moved Permanently
 < Server: AkamaiGHost
 < Content-Length: 0
-< Expires: Tue, 15 Aug 2017 05:34:53 GMT
+< Expires: Tue, 15 Aug 2017 15:48:14 GMT
 < Cache-Control: max-age=0, no-cache, no-store
 < Pragma: no-cache
-< Date: Tue, 15 Aug 2017 05:34:53 GMT
+< Date: Tue, 15 Aug 2017 15:48:14 GMT
 < Connection: keep-alive
-* Replaced cookie InitialURL="www.spdrs.com/product/fund.seam?ticker=ASDASDASD" for domain spdrs.com, path /, expire 0
-< Set-Cookie: InitialURL=www.spdrs.com/product/fund.seam?ticker=ASDASDASD; path=/; domain=.spdrs.com; secure
-< Location: https://us.spdrs.com/en/product/fund.seam?ticker=ASDASDASD
+* Replaced cookie InitialURL="www.spdrs.com/product/fund.seam?ticker=DGT" for domain spdrs.com, path /, expire 0
+< Set-Cookie: InitialURL=www.spdrs.com/product/fund.seam?ticker=DGT; path=/; domain=.spdrs.com; secure
+< Location: https://us.spdrs.com/en/product/fund.seam?ticker=DGT
 < Testing-Akamai-Edgescape-Headers: Georegion=274; Country_Code=US; City=REGOPARK; Lat=40.7254; Long=-73.8614; Areacode=718; Zip=11374
 < 
 * Connection #0 to host www.spdrs.com left intact
-* Issue another request to this URL: 'https://us.spdrs.com/en/product/fund.seam?ticker=ASDASDASD'
+* Issue another request to this URL: 'https://us.spdrs.com/en/product/fund.seam?ticker=DGT'
 *   Trying 104.107.13.190...
 * Connected to us.spdrs.com (104.107.13.190) port 443 (#1)
 * Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
@@ -54,11 +54,11 @@ Accept-Language: en-us,en;q=0.5
 *  subjectAltName: host "us.spdrs.com" matched cert's "us.spdrs.com"
 *  issuer: C=US; O=Symantec Corporation; OU=Symantec Trust Network; CN=Symantec Class 3 Secure Server CA - G4
 *  SSL certificate verify ok.
-> GET /en/product/fund.seam?ticker=ASDASDASD HTTP/1.1
+> GET /en/product/fund.seam?ticker=DGT HTTP/1.1
 Host: us.spdrs.com
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
-Referer: https://www.spdrs.com/product/fund.seam?ticker=ASDASDASD
-Cookie: JSESSIONID=Wtjj44cO5UL_wRcsiHZ1o0M-u_XHca-q_mg_dDtQLGdunzQx80me!-1602976279; InitialURL=www.spdrs.com/product/fund.seam?ticker=ASDASDASD; disclaimer=accepted; geoloc=us:en; role=def
+Referer: https://www.spdrs.com/product/fund.seam?ticker=DGT
+Cookie: JSESSIONID=Wtjj44cO5UL_wRcsiHZ1o0M-u_XHca-q_mg_dDtQLGdunzQx80me!-1602976279; InitialURL=www.spdrs.com/product/fund.seam?ticker=DGT; disclaimer=accepted; geoloc=us:en; role=def
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Cache-Control: max-age=0
 Connection: keep-alive
@@ -69,19 +69,21 @@ Accept-Language: en-us,en;q=0.5
 < HTTP/1.1 301 Moved Permanently
 < Server: Oracle-iPlanet-Web-Server/7.0
 < Content-Type: text/plain
-< Location: https://us.spdrs.com/exceptions/error.seam?cid=295595
+< Location: https://us.spdrs.com/etf/spdr-global-dow-etf-DGT
 < X-powered-by: JSF/2.0
 < Content-Encoding: gzip
 < Vary: accept-encoding
-< Expires: Tue, 15 Aug 2017 05:34:54 GMT
+< Expires: Tue, 15 Aug 2017 15:48:14 GMT
 < Cache-Control: max-age=0, no-cache, no-store
 < Pragma: no-cache
-< Date: Tue, 15 Aug 2017 05:34:54 GMT
+< Date: Tue, 15 Aug 2017 15:48:14 GMT
 < Connection: close
+* Replaced cookie JSESSIONID="UyLmlMCyniYQwWZv6r3jcv66ituOL5-f8UZ8a9VDcRryItJlnexF!-1602976279" for domain us.spdrs.com, path /, expire 0
+< Set-Cookie: JSESSIONID=UyLmlMCyniYQwWZv6r3jcv66ituOL5-f8UZ8a9VDcRryItJlnexF!-1602976279; path=/; HttpOnly
 < Testing-Akamai-Edgescape-Headers: Georegion=274; Country_Code=US; City=REGOPARK; Lat=40.7254; Long=-73.8614; Areacode=718; Zip=11374
 < 
 * Closing connection 1
-* Issue another request to this URL: 'https://us.spdrs.com/exceptions/error.seam?cid=295595'
+* Issue another request to this URL: 'https://us.spdrs.com/etf/spdr-global-dow-etf-DGT'
 * Hostname us.spdrs.com was found in DNS cache
 *   Trying 104.107.13.190...
 * Connected to us.spdrs.com (104.107.13.190) port 443 (#2)
@@ -99,11 +101,11 @@ Accept-Language: en-us,en;q=0.5
 *  subjectAltName: host "us.spdrs.com" matched cert's "us.spdrs.com"
 *  issuer: C=US; O=Symantec Corporation; OU=Symantec Trust Network; CN=Symantec Class 3 Secure Server CA - G4
 *  SSL certificate verify ok.
-> GET /exceptions/error.seam?cid=295595 HTTP/1.1
+> GET /etf/spdr-global-dow-etf-DGT HTTP/1.1
 Host: us.spdrs.com
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
-Referer: https://us.spdrs.com/en/product/fund.seam?ticker=ASDASDASD
-Cookie: JSESSIONID=Wtjj44cO5UL_wRcsiHZ1o0M-u_XHca-q_mg_dDtQLGdunzQx80me!-1602976279; InitialURL=www.spdrs.com/product/fund.seam?ticker=ASDASDASD; disclaimer=accepted; geoloc=us:en; role=def
+Referer: https://us.spdrs.com/en/product/fund.seam?ticker=DGT
+Cookie: JSESSIONID=UyLmlMCyniYQwWZv6r3jcv66ituOL5-f8UZ8a9VDcRryItJlnexF!-1602976279; InitialURL=www.spdrs.com/product/fund.seam?ticker=DGT; disclaimer=accepted; geoloc=us:en; role=def
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Cache-Control: max-age=0
 Connection: keep-alive
@@ -114,26 +116,26 @@ Accept-Language: en-us,en;q=0.5
 < HTTP/1.1 301 Moved Permanently
 < Server: AkamaiGHost
 < Content-Length: 0
-< Expires: Tue, 15 Aug 2017 05:34:54 GMT
+< Expires: Tue, 15 Aug 2017 15:48:14 GMT
 < Cache-Control: max-age=0, no-cache, no-store
 < Pragma: no-cache
-< Date: Tue, 15 Aug 2017 05:34:54 GMT
+< Date: Tue, 15 Aug 2017 15:48:14 GMT
 < Connection: keep-alive
-* Replaced cookie InitialURL="us.spdrs.com/exceptions/error.seam?cid=295595" for domain spdrs.com, path /, expire 0
-< Set-Cookie: InitialURL=us.spdrs.com/exceptions/error.seam?cid=295595; path=/; domain=.spdrs.com; secure
-< Location: https://us.spdrs.com/en/exceptions/error.seam?cid=295595
+* Replaced cookie InitialURL="us.spdrs.com/etf/spdr-global-dow-etf-DGT" for domain spdrs.com, path /, expire 0
+< Set-Cookie: InitialURL=us.spdrs.com/etf/spdr-global-dow-etf-DGT; path=/; domain=.spdrs.com; secure
+< Location: https://us.spdrs.com/en/etf/spdr-global-dow-etf-DGT
 < Testing-Akamai-Edgescape-Headers: Georegion=274; Country_Code=US; City=REGOPARK; Lat=40.7254; Long=-73.8614; Areacode=718; Zip=11374
 < 
 * Connection #2 to host us.spdrs.com left intact
-* Issue another request to this URL: 'https://us.spdrs.com/en/exceptions/error.seam?cid=295595'
-* Found bundle for host us.spdrs.com: 0x958ac43290 [can pipeline]
+* Issue another request to this URL: 'https://us.spdrs.com/en/etf/spdr-global-dow-etf-DGT'
+* Found bundle for host us.spdrs.com: 0xb7b6b01d00 [can pipeline]
 * Re-using existing connection! (#2) with host us.spdrs.com
 * Connected to us.spdrs.com (104.107.13.190) port 443 (#2)
-> GET /en/exceptions/error.seam?cid=295595 HTTP/1.1
+> GET /en/etf/spdr-global-dow-etf-DGT HTTP/1.1
 Host: us.spdrs.com
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
-Referer: https://us.spdrs.com/exceptions/error.seam?cid=295595
-Cookie: JSESSIONID=Wtjj44cO5UL_wRcsiHZ1o0M-u_XHca-q_mg_dDtQLGdunzQx80me!-1602976279; InitialURL=us.spdrs.com/exceptions/error.seam?cid=295595; disclaimer=accepted; geoloc=us:en; role=def
+Referer: https://us.spdrs.com/etf/spdr-global-dow-etf-DGT
+Cookie: JSESSIONID=UyLmlMCyniYQwWZv6r3jcv66ituOL5-f8UZ8a9VDcRryItJlnexF!-1602976279; InitialURL=us.spdrs.com/etf/spdr-global-dow-etf-DGT; disclaimer=accepted; geoloc=us:en; role=def
 Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
 Cache-Control: max-age=0
 Connection: keep-alive
@@ -145,20 +147,21 @@ Accept-Language: en-us,en;q=0.5
 < Server: Oracle-iPlanet-Web-Server/7.0
 < Content-Type: application/xhtml+xml; charset=UTF-8
 < X-powered-by: JSF/2.0
-< Content-Length: 16133
-< Expires: Tue, 15 Aug 2017 05:34:54 GMT
+< Expires: Tue, 15 Aug 2017 15:48:14 GMT
 < Cache-Control: max-age=0, no-cache, no-store
 < Pragma: no-cache
-< Date: Tue, 15 Aug 2017 05:34:54 GMT
+< Date: Tue, 15 Aug 2017 15:48:14 GMT
+< Transfer-Encoding:  chunked
 < Connection: keep-alive
+< Connection: Transfer-Encoding
 * Added cookie fundDomInKey="" for domain spdrs.com, path /, expire 3600
 < Set-Cookie: fundDomInKey=; domain=.spdrs.com; expires=Thu, 01-Jan-1970 01:00:00 GMT; path=/
-* Replaced cookie geoloc="us:en" for domain spdrs.com, path /, expire 1536903294
-< Set-Cookie: geoloc=us:en; domain=.spdrs.com; expires=Fri, 14-Sep-2018 05:34:54 GMT; path=/; secure; HttpOnly
-* Replaced cookie role="def" for domain spdrs.com, path /, expire 1536903294
-< Set-Cookie: role=def; domain=.spdrs.com; expires=Fri, 14-Sep-2018 05:34:54 GMT; path=/; secure; HttpOnly
-* Replaced cookie disclaimer="accepted" for domain spdrs.com, path /, expire 1536903294
-< Set-Cookie: disclaimer=accepted; domain=.spdrs.com; expires=Fri, 14-Sep-2018 05:34:54 GMT; path=/; secure; HttpOnly
+* Replaced cookie geoloc="us:en" for domain spdrs.com, path /, expire 1536940094
+< Set-Cookie: geoloc=us:en; domain=.spdrs.com; expires=Fri, 14-Sep-2018 15:48:14 GMT; path=/; secure; HttpOnly
+* Replaced cookie role="def" for domain spdrs.com, path /, expire 1536940094
+< Set-Cookie: role=def; domain=.spdrs.com; expires=Fri, 14-Sep-2018 15:48:14 GMT; path=/; secure; HttpOnly
+* Replaced cookie disclaimer="accepted" for domain spdrs.com, path /, expire 1536940094
+< Set-Cookie: disclaimer=accepted; domain=.spdrs.com; expires=Fri, 14-Sep-2018 15:48:14 GMT; path=/; secure; HttpOnly
 * Added cookie countryKey="" for domain spdrs.com, path /, expire 3600
 < Set-Cookie: countryKey=; domain=.spdrs.com; expires=Thu, 01-Jan-1970 01:00:00 GMT; path=/
 < Testing-Akamai-Edgescape-Headers: Georegion=274; Country_Code=US; City=REGOPARK; Lat=40.7254; Long=-73.8614; Areacode=718; Zip=11374

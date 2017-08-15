@@ -36,6 +36,8 @@
                 <h4>ETF Name: {{ @$etf->etf_name }}</h4>
                 <p><strong>Description:</strong> {{ @$etf->description }}</p>  
             </div>
+        
+        
             
             
         

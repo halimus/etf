@@ -18,7 +18,6 @@ class CreateEtfTable extends Migration
             $table->increments('etf_id');
             $table->string('etf_name', 25)->nullable(false);
             $table->string('description', 255)->nullable();
-            $table->text('url', 255)->nullable();
             $table->date('etf_date')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->integer('user_id')->unsigned();

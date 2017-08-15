@@ -16,7 +16,7 @@ class Etf extends Model{
      * @var array
      */
     protected $fillable = [
-        'etf_name', 'description', 'etf_date', 'url', 'user_id'
+        'etf_name', 'description', 'etf_date', 'user_id'
     ];
 
     /**
