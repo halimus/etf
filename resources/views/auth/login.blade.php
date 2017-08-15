@@ -24,6 +24,7 @@
                                     </div>     
                                     <div style="padding-top:40px" class="panel-body" >
                                         <form method="POST" action="login" class="form-horizontal" role="form">
+                                            {{ csrf_field() }}
                                             <div style="margin-bottom: 25px" class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input type="email" class="form-control" id="email" name="email" value="<?php echo @$_POST['email'];?>" placeholder="Email address" required>                                        
