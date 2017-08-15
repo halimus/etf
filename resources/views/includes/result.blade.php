@@ -1,7 +1,8 @@
 <div class="row" style="margin-bottom: 120px; border: 0px solid red; height: 100%;">
     <div class="col-md-12" style="margin-top: 10px; border: 0px solid silver;">
         <h3>ETF Name: {{ @$etf->etf_name }}</h3>
-        <p><strong>Description:</strong> {{ @$etf->description }}</p>  
+        <p><strong>Description:</strong> {{ @$etf->description }}</p> 
+        <p><strong>As of:</strong> {{ Carbon\Carbon::parse(@$etf->etf_date)->format('m/d/Y') }}</p>  
     </div>
 
     @if(count($holdings))
@@ -34,6 +35,7 @@
                         ?>
                     </tbody>
                 </table>
+                <button type="button" class="btn btn-default btn-sm" id="export1">Export to CSV</button>
             </div>
             <div class="col-md-8">
                 <div id="holding_chart"></div>
@@ -72,6 +74,7 @@
                         ?>
                     </tbody>
                 </table>
+                <button type="button" class="btn btn-default btn-sm" id="export2">Export to CSV</button>
             </div>
             <div class="col-md-8" style="border: 0px dotted green;">
                 <div id="sector_chart"></div>
@@ -111,6 +114,7 @@
                         ?>
                     </tbody>
                 </table>
+                <button type="button" class="btn btn-default btn-sm" id="export3">Export to CSV</button>
             </div>
             <div class="col-md-8" style="border: 0px dotted green;">
                 <div id="country_chart"></div>

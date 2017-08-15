@@ -258,5 +258,11 @@ bloc
   
 }
 #holding_chart{
-    min-height: 550px;
+    min-height: 600px;
+}
+#sector_chart{
+    min-height: 500px;
+}
+#country_chart{
+    min-height: 650px;
 }
