@@ -18,7 +18,8 @@ class UsersController extends Controller {
      */
     public function index() {
         $title = 'Users';
-        $users = User::all();
+        //$users = User::all();
+        $users = User::all()->sortByDesc("created_at");
         return view('users.list', compact('title', 'users'));
     }
 
@@ -127,7 +128,13 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        
+        Session::flash('flash_message', 'User has been deleted!');
+        //Session::flash('flash_message_important', true);
+        //Session::flash('error', 'The old password is incorect');
+        return redirect('users');
     }
     
     /**
