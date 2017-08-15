@@ -12,8 +12,8 @@
             <i class="fa fa-minus"></i>
         </h4>
         <div class="row bloc_1">
-            <div class="col-md-4" style="border: 0px dotted green;"> 
-                <table id="datatable" class="table table-bordered table-hover" cellspacing="0" width="100%">
+            <div class="col-md-4"> 
+                <table id="table_1" class="table table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -35,7 +35,7 @@
                         ?>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-success btn-sm" id="export1">Export to CSV</button>
+                <button type="button" class="btn btn-success btn-sm export" rel="1">Export to CSV</button>
             </div>
             <div class="col-md-8">
                 <div id="holding_chart"></div>
@@ -53,7 +53,7 @@
         </h4> 
         <div class="row bloc_2">
             <div class="col-md-4" style="border: 0px dotted green;"> 
-                <table id="datatable" class="table table-bordered table-hover" cellspacing="0" width="100%">
+                <table id="table_2" class="table table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -74,7 +74,7 @@
                         ?>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-success btn-sm" id="export2">Export to CSV</button>
+                <button type="button" class="btn btn-success btn-sm export" rel="2">Export to CSV</button>
             </div>
             <div class="col-md-8" style="border: 0px dotted green;">
                 <div id="sector_chart"></div>
@@ -92,7 +92,7 @@
         </h4>
         <div class="row bloc_3">
             <div class="col-md-4" style="border: 0px dotted green;"> 
-                <table id="datatable" class="table table-bordered table-hover" cellspacing="0" width="100%">
+                <table id="table_3" class="table table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -114,7 +114,7 @@
                         ?>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-success btn-sm" id="export3">Export to CSV</button>
+                <button type="button" class="btn btn-success btn-sm export" rel="3">Export to CSV</button>
             </div>
             <div class="col-md-8" style="border: 0px dotted green;">
                 <div id="country_chart"></div>
@@ -128,6 +128,7 @@
 @push('scripts')
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="{{ asset('js/jquery.tabletoCSV.js') }}" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
     // holding_chart
@@ -258,5 +259,14 @@
     });
     <?php } ?>
 
+    /**
+     * Export to CSV file
+     */
+    $(function(){
+        $(".export").click(function(){
+            var id = $(this).attr('rel');
+            $("#table_"+id).tableToCSV();
+        });
+    });
 </script>
 @endpush
