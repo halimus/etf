@@ -34,6 +34,10 @@ Route::post('users/{id}/edit/', 'UsersController@update');
 
 Route::delete('users/{id}', 'UsersController@destroy');
 
+//change_password routes
+Route::get('change_password', 'ProfileController@password_form');
+Route::post('change_password', 'ProfileController@update_password');
+
 
 //About routes
 Route::get('/about', 'AboutController@index');
