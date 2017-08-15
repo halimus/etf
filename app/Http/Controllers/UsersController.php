@@ -71,7 +71,7 @@ class UsersController extends Controller {
     public function show($id) {
         $user = User::findOrFail($id);
         if (!$user) {
-            Session::flash('notif_type', 'error');
+            Session::flash('notif_type', 'danger');
             Session::flash('notif', 'Could not find the user!');
             return redirect("users/$id/edit");
         }
@@ -100,7 +100,7 @@ class UsersController extends Controller {
     public function update(Request $request, $id) {
         $user = User::findOrFail($id);
         if (!$user) {
-            Session::flash('notif_type', 'error');
+            Session::flash('notif_type', 'danger');
             Session::flash('notif', 'Could not find the user!');
             return redirect("users/$id/edit");
         }
@@ -139,7 +139,7 @@ class UsersController extends Controller {
     public function destroy($id) {
         $user = User::findOrFail($id);
         if (!$user) {
-            Session::flash('notif_type', 'error');
+            Session::flash('notif_type', 'danger');
             Session::flash('notif', 'Could not find the user!');
             return redirect("users/$id/edit");
         }
