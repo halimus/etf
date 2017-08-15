@@ -13,8 +13,17 @@ class EtfController extends Controller {
      */
     public function index() {
         $title = 'ETFs';
-        return view('etf', compact('title'));
+        return view('etf.list', compact('title'));
     }
     
+    /**
+     * Display Logs page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logs() {
+        $title = 'Logs';
+        return view('etf.logs', compact('title'));
+    }
     
 }

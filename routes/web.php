@@ -21,7 +21,7 @@ Route::post('/', 'HomeController@search')->name('home');
 
 //Etf routes
 Route::get('/etf', 'EtfController@index');
-
+Route::get('/logs', 'EtfController@logs');
 
 //Users routes
 Route::get('/users', 'UsersController@index');
@@ -41,4 +41,5 @@ Route::post('change_password', 'ProfileController@update_password');
 
 
 //About routes
-Route::get('/about', 'AboutController@index');
+Route::get('/about', 'HelpController@about');
+Route::get('/help', 'HelpController@help');

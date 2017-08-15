@@ -12,10 +12,12 @@
         <ul class="nav navbar-nav">
             <li><a href="{{ url('/')}}">Home</a></li>
             <li><a href="{{ url('/etf')}}">ETFs</a></li>
+            <li><a href="{{ url('/help')}}">Help</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ url('/users')}}">Manage Users</a></li>
+                    <li><a href="{{ url('/logs')}}">View Logs</a></li>
                     <li class="divider"></li>
                     <li><a href="{{ url('/about')}}">About the software</a></li>
                 </ul>
