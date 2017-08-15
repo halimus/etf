@@ -252,4 +252,11 @@ bloc
     cursor: pointer;
     background: #d8d8d8;
     border: 1px solid #d8d8d8; 
-}    
+}   
+
+.bloc_1{
+  
+}
+#holding_chart{
+    min-height: 550px;
+}
