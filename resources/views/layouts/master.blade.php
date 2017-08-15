@@ -21,7 +21,7 @@
 </head>
 <body>
 <div id="main">
-    @include('includes.header')
+    @include('includes.navbar')
 
     <div id="wrapper">
         @yield('content')
