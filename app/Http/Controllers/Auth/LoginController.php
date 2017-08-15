@@ -32,8 +32,17 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('guest')->except('logout');
+    }
+    
+    /**
+     * Show the application login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm() {
+        $title = 'Login';
+        return view('auth.login', compact('title'));
     }
 }
