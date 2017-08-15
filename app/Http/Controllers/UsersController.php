@@ -69,7 +69,12 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+        $user = User::findOrFail($id);
+        if (!$user) {
+            Session::flash('notif_type', 'error');
+            Session::flash('notif', 'Could not find the user!');
+            return redirect("users/$id/edit");
+        }
     }
     
 
@@ -94,31 +99,35 @@ class UsersController extends Controller {
      */
     public function update(Request $request, $id) {
         $user = User::findOrFail($id);
-        $check_password = false;
-        if($request['reset_password']){
-            $check_password=true;
+        if (!$user) {
+            Session::flash('notif_type', 'error');
+            Session::flash('notif', 'Could not find the user!');
+            return redirect("users/$id/edit");
         }
-        $rules = $this->validation_rules($user->users_id, $check_password);
+        
+        $check_password = isset($request['reset_password']) ? : false;
+        $rules = $this->validation_rules($id, $check_password);
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         } 
-        else {
-            $input = $request->all();
-            $input['updated_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s'); 
-            $updated = $user->update($input);
-            
-            if($check_password){
-                User::where('user_id', $id)->update(
-                  ['password' => bcrypt($request['password'])]      
-                );
-  
-            }
-            Session::flash('notif_type', 'success');
-            Session::flash('notif', 'User updated successfully!');
-        }
-        return redirect("admin/users/$id/edit");
+       
+        $input = array();
+        $input['username'] = $request['username']; 
+        $input['email']    = $request['email'];   
+        $input['updated_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s'); 
+        $updated = $user->update($input);
         
+        if($check_password){
+            User::where('user_id', $id)->update(
+              ['password' => bcrypt($request['password'])]      
+            );
+        }
+        
+        Session::flash('notif_type', 'success');
+        Session::flash('notif', 'User updated successfully!');
+        return redirect("users/$id/edit");    
+             
     }
 
     /**
@@ -129,8 +138,13 @@ class UsersController extends Controller {
      */
     public function destroy($id) {
         $user = User::findOrFail($id);
-        $user->delete();
+        if (!$user) {
+            Session::flash('notif_type', 'error');
+            Session::flash('notif', 'Could not find the user!');
+            return redirect("users/$id/edit");
+        }
         
+        $user->delete();
         Session::flash('flash_message', 'User has been deleted!');
         //Session::flash('flash_message_important', true);
         //Session::flash('error', 'The old password is incorect');
