@@ -29,4 +29,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    /**
+     * Get the etf for the user.
+     */
+    public function etf(){
+        //return $this->hasMany('App\Models\Etf', 'etf_id');
+        return $this->hasMany('App\Models\Etf', 'etf_id', 'etf_id');
+    }
+    
+    /**
+     * Get the logs for the user.
+     */
+    public function logs(){
+        return $this->hasMany('App\Models\Logs', 'log_id', 'log_id');
+    }
+    
+    
+    
 }

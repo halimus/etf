@@ -31,7 +31,7 @@ class Holding extends Model
      * 
      * @return type
      */
-    public function author(){
+    public function holding(){
         return $this->belongsTo('App\Models\Etf', 'etf_id');
     }
 }

@@ -32,7 +32,7 @@ class Logs extends Model{
      * 
      * @return type
      */
-    public function author(){
+    public function logs(){
         return $this->belongsTo('App\Models\User', 'user_id');
     }
     
