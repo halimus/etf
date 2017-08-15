@@ -16,12 +16,19 @@ class UsersTableSeeder extends Seeder {
         //App\Models\User::truncate();
         
         DB::table('users')->insert([
-            'username' => 'admin',
+            'username' => 'Admin',
             'email' => 'admin@domain.com',
             'password' => bcrypt('1234'),
             //'created_at' => date('Y-m-d H:i:s')
             //'created_at' => \Carbon\Carbon::now(),
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+        
+        DB::table('users')->insert([
+            'username' => 'Test',
+            'email' => 'test@domain.com',
+            'password' => bcrypt('1234'),
+            'created_at' => \Carbon\Carbon::now(),
         ]);
              
     }
