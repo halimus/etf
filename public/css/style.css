@@ -203,10 +203,8 @@ form-error{
 }
 /*------------ end form search -------------*/
 
-/*------------ table -------------*/
-
 /*=====================================
-Datatable
+Table
 ======================================*/
 .table{
     border: 2px solid #005F9C;
@@ -241,4 +239,17 @@ Datatable
     background-color: #FFFEDB;
 }
 
-
+/*=====================================
+bloc
+======================================*/
+.bloc{
+    border: 1px solid #E6E7E8; 
+    padding: 8px 5px;
+    background: #E6E7E8;
+}
+.bloc .fa{ float: right;}
+.bloc:hover{
+    cursor: pointer;
+    background: #d8d8d8;
+    border: 1px solid #d8d8d8; 
+}    

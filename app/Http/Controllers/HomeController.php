@@ -56,15 +56,15 @@ class HomeController extends Controller {
                 $etf = Etf::where('etf_name', $input)->first();
             }
             
-            $holding = DB::table('holding')->where('etf_id', $etf->etf_id)->get();
-            $sector  = DB::table('sector')->where('etf_id',  $etf->etf_id)->get();
-            $country = DB::table('country')->where('etf_id', $etf->etf_id)->get();
+            $holdings = DB::table('holding')->where('etf_id', $etf->etf_id)->get();
+            $sectors  = DB::table('sector')->where('etf_id',  $etf->etf_id)->get();
+            $countrys = DB::table('country')->where('etf_id', $etf->etf_id)->get();
             
             //Tools::message($etf);
             //Tools::message($holding, 1);
             
         }
-        return view('home', compact('etf', 'holding', 'sector', 'country'));
+        return view('home', compact('etf', 'holdings', 'sectors', 'countrys'));
     }
 
     /**
