@@ -168,6 +168,7 @@
         },
         series: [{
             name: 'holding',
+            //color: '#81B33B',
             data: [<?php echo $holdings_data;?>],
             dataLabels: {
                 enabled: true,
