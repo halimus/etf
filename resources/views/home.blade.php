@@ -29,16 +29,22 @@
             @endif
         </div>
         
-        <div class="col-md-12" style="border: 0px solid silver;margin-top: 10px;min-height: 100px;">
+        @if(count(@$etf))
+        
+            
+            <div class="col-md-12" style="margin-top: 10px; border: 1px solid silver;">
+                <h4>ETF Name: {{ @$etf->etf_name }}</h4>
+                <p><strong>Description:</strong> {{ @$etf->description }}</p>  
+            </div>
             
             
-            
-            
-            
-            
-            
-            
-        </div>
+        
+        
+        
+        
+       
+        @endif
+        
          
     </div>
 </div>
