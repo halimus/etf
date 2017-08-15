@@ -18,7 +18,8 @@ class UsersController extends Controller {
      */
     public function index() {
         $title = 'Users';
-        $users = User::all();
+        //$users = User::all();
+        $users = User::all()->sortByDesc("created_at");
         return view('users.list', compact('title', 'users'));
     }
 

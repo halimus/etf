@@ -27,7 +27,7 @@
             </div>
             @endif
             
-            <form role="form" method="POST" action="{{ url("/admin/users/$user->user_id/edit") }}">
+            <form role="form" method="POST" action="{{ url("/users/$user->user_id/edit") }}">
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-lg-12">	
