@@ -16,7 +16,8 @@ class UsersTableSeeder extends Seeder {
         //App\Models\User::truncate();
         
         DB::table('users')->insert([
-            'username' => 'Admin',
+            'name' => 'Admin',
+            'username' => 'admin',
             'email' => 'admin@domain.com',
             'password' => bcrypt('1234'),
             //'created_at' => date('Y-m-d H:i:s')
@@ -25,7 +26,8 @@ class UsersTableSeeder extends Seeder {
         ]);
         
         DB::table('users')->insert([
-            'username' => 'Test',
+            'name' => 'Test',
+            'username' => 'test',
             'email' => 'test@domain.com',
             'password' => bcrypt('1234'),
             'created_at' => \Carbon\Carbon::now(),
