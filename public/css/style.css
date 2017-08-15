@@ -243,26 +243,18 @@ Table
 bloc
 ======================================*/
 .bloc{
-    border: 1px solid #E6E7E8; 
+    border: 1px solid #005F9C; 
     padding: 8px 5px;
-    background: #E6E7E8;
+    background: #005F9C;
+    color: #fff;
 }
 .bloc .fa{ float: right;}
 .bloc:hover{
     cursor: pointer;
-    background: #d8d8d8;
-    border: 1px solid #d8d8d8; 
+    color: yellow;
 }   
 
-.bloc_1{
-  
-}
-#holding_chart{
-    min-height: 600px;
-}
-#sector_chart{
-    min-height: 500px;
-}
-#country_chart{
-    min-height: 650px;
-}
+.bloc_1, .bloc_2, .bloc_3{margin-bottom: 15px; padding-top: 10px;}
+#holding_chart{min-height: 600px;}
+#sector_chart{min-height: 500px;}
+#country_chart{min-height: 650px;}
