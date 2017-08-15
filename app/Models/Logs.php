@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sector extends Model
-{
-    protected $table = 'sector';
-    protected $primaryKey = 'sector_id';
+class Logs extends Model{
+    
+    protected $table = 'logs';
+    protected $primaryKey = 'log_id';
     public $timestamps = false;
 
     /**
@@ -16,7 +16,7 @@ class Sector extends Model
      * @var array
      */
     protected $fillable = [
-        'sector_name', 'weight', 'etf_id'
+        'symbol', 'ip_address', 'user_id'
     ];
 
     /**
@@ -25,13 +25,15 @@ class Sector extends Model
      * @var array
      */
     protected $hidden = [
+        
     ];
     
     /**
      * 
      * @return type
      */
-    public function sector(){
-        return $this->belongsTo('App\Models\Etf', 'etf_id');
+    public function author(){
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
+    
 }

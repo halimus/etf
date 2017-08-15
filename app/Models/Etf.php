@@ -32,8 +32,15 @@ class Etf extends Model{
      * 
      * @return type
      */
-    public function author(){
+    public function etf(){
         return $this->belongsTo('App\Models\User', 'user_id');
     }
     
+    
+//    /**
+//     * 
+//     */
+//    public function holding(){
+//        return $this->hasMany('App\Holding');
+//    }
 }
