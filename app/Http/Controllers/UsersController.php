@@ -113,6 +113,7 @@ class UsersController extends Controller {
         } 
        
         $input = array();
+        $input['name'] = $request['name']; 
         $input['username'] = $request['username']; 
         $input['email']    = $request['email'];   
         $input['updated_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s'); 
@@ -159,13 +160,15 @@ class UsersController extends Controller {
      */
     private function validation_rules($user_id = null, $check_password=false){
         $rules = [
-            'username' => 'required|max:20',
+            'name' => 'required|max:25',
         ];
   
         if(!empty($user_id)){
-            $rules['email'] = 'required|email|max:45|unique:users,email, ' . $user_id . ',user_id';
+            $rules['username'] = 'required|max:25|unique:users,username, ' . $user_id . ',user_id';
+            $rules['email'] = 'required|email|max:45|unique:users,email, ' . $user_id . ',user_id'; 
         }
         else{
+            $rules['username'] = 'required|max:25|unique:users';  
             $rules['email'] = 'required|email|max:45|unique:users';
             $rules['password'] = 'required|min:4|confirmed';
             $rules['password_confirmation'] = 'required';

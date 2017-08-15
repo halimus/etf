@@ -16,8 +16,9 @@
                     <thead>
                         <tr>
                             <th>Id</th>
+                            <th>Name</th>
                             <th>Username</th>
-                            <th>Email</th>
+                            <th>Email Address</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th style="width: 60px">Edit</th>
@@ -28,6 +29,7 @@
                         @foreach($users as $user)    
                         <tr>
                             <td>{{ $user->user_id }}</td>
+                            <td>{{ $user->name }}</td>
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ Carbon\Carbon::parse($user->created_at)->format('m/d/Y H:m:s') }}</td>
