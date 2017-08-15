@@ -40,7 +40,7 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function search(Request $request) {
-        
+        $title = 'Home';
         $input = trim($request->search);
         if (!empty($input)) {
             
@@ -59,12 +59,9 @@ class HomeController extends Controller {
             $holdings = DB::table('holding')->where('etf_id', $etf->etf_id)->get();
             $sectors  = DB::table('sector')->where('etf_id',  $etf->etf_id)->get();
             $countrys = DB::table('country')->where('etf_id', $etf->etf_id)->get();
-            
-            //Tools::message($etf);
-            //Tools::message($holding, 1);
-            
+
         }
-        return view('home', compact('etf', 'holdings', 'sectors', 'countrys'));
+        return view('home', compact('title', 'etf', 'holdings', 'sectors', 'countrys'));
     }
 
     /**
