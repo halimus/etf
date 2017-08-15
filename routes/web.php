@@ -16,6 +16,7 @@ Auth::routes();
 //Home routes
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home', 'HomeController@search')->name('home');
 
 
 //Etf routes
