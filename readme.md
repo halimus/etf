@@ -10,6 +10,7 @@ Technologies used:
 
 
 
+
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+This application is open-sourced licensed under the [My license](http://halim.lardjane.com/).
