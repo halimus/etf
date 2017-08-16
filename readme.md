@@ -8,6 +8,16 @@ Technologies used:
 - [jQuery](https://jquery.com/).
 - [Highcharts](https://www.highcharts.com/).
 
+## Demo : 
+https://demo.halimlardjane.com/etf
+
+**The access infos:**
+
+Email address: admin@domain.com
+
+Password: 1234
+
+
 
 
 
