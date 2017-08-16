@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder {
         
         DB::table('users')->insert([
             [
+                'user_id' => 1,
                 'name' => 'Admin',
                 'username' => 'admin',
                 'email' => 'admin@domain.com',
@@ -26,6 +27,7 @@ class UsersTableSeeder extends Seeder {
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
+                'user_id' => 2,
                 'name' => 'Test',
                 'username' => 'test',
                 'email' => 'test@domain.com',
