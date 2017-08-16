@@ -35,7 +35,13 @@ class EtfController extends Controller {
      */
     public function logs() {
         $title = 'Logs';
-        return view('etf.logs', compact('title'));
+        
+        $logs = DB::table('logs')
+                ->join('users', 'logs.user_id', '=', 'users.user_id')
+                ->select('logs.*', 'users.name', 'users.username')
+                ->get();
+        
+        return view('etf.logs', compact('title', 'logs'));
     }
     
     /**
