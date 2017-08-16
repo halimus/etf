@@ -29,4 +29,14 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+    
+    /**
+     * Show the forgot password form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLinkRequestForm() {
+        $title = 'Forgot Passsword';
+        return view('auth.passwords.email', compact('title'));
+    }
 }
