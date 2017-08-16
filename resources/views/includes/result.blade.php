@@ -29,8 +29,7 @@
                                     <td>'.$holding->holding_name.'</td>
                                     <td>'.$holding->weight.' %</td>
                                 </tr>';
-                                
-                                $holdings_data.="['$holding->holding_name', $holding->weight],";
+                                $holdings_data.='["'.$holding->holding_name.'", '.$holding->weight.'],';
                            }
                         ?>
                     </tbody>
@@ -69,7 +68,7 @@
                                     <td>'.$sector->sector_name.'</td>
                                     <td>'.$sector->weight.' %</td>
                                 </tr>';
-                                $sectors_data.="{name: '$sector->sector_name', y: $sector->weight},"; 
+                                $sectors_data.='{name: "'.$sector->sector_name.'", y: '.$sector->weight.'},'; 
                            }
                         ?>
                     </tbody>
@@ -108,8 +107,7 @@
                                     <td>'.$country->country_name.'</td>
                                     <td>'.$country->weight.' %</td>
                                 </tr>';
-                                
-                                $country_data.="{name: '$country->country_name', y: $country->weight},"; 
+                                $country_data.='{name: "'.$country->country_name.'", y: '.$country->weight.'},';
                            }
                         ?>
                     </tbody>
