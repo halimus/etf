@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-//use Session;
 
 class ProfileController extends Controller {
 
@@ -55,7 +55,37 @@ class ProfileController extends Controller {
      */
     public function update_password(Request $request) {
         $title = 'Change password';
-        return view('profile.password', compact('title'));     
+        
+        $user = Auth::user();
+        
+        $rules = array(
+            'current_password' => 'required',
+            'password' => 'required|min:4|confirmed',
+            //'password' => 'required|alphaNum|between:6,15|confirmed',
+            'password_confirmation' => 'required',
+        );
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+        
+        //$current_password = Request::get('current_password');
+        $current_password = $request->get('current_password');
+        
+        if (!Hash::check($current_password, $user->password)) {
+            Session::flash('notif_type', 'danger');
+            Session::flash('notif', 'The Old Password is incorect!');
+        }
+        else{
+            $new_password = bcrypt($request->get('password')); 
+            $user->update(['password' => $new_password]);
+            
+            Session::flash('notif_type', 'success');
+            Session::flash('notif', 'Password has been updated!');
+        }
+        
+        return redirect('change_password');
+        //return view('profile.password', compact('title'));  
     }
 
 }
