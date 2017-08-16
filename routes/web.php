@@ -20,7 +20,6 @@ Route::middleware(['auth'])->group(function () {
     //Route::get('/home', 'HomeController@index')->name('home');
     Route::post('/', 'HomeController@search')->name('home');
     
-    
     //Etf routes
     Route::get('/etf', 'EtfController@index');
     Route::get('/logs', 'EtfController@logs');
@@ -35,7 +34,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('users/{id}/edit/', 'UsersController@update');
     Route::delete('users/{id}', 'UsersController@destroy');
 
-    //Change_password routes
+    //Profile & Change_password routes
+    Route::get('profile',  'ProfileController@profile_form');
+    Route::post('profile',  'ProfileController@update_profile');
     Route::get('change_password',  'ProfileController@password_form');
     Route::post('change_password', 'ProfileController@update_password');
 

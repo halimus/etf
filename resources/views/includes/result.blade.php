@@ -8,7 +8,7 @@
     @if(count($holdings))
     <div class="col-md-12" style="margin-top: 10px; border: 0px solid silver;">
         <h4 class="bloc" rel="1">
-            <strong>1-Fund Top Holdings:</strong>
+            <strong>1- Fund Top Holdings:</strong>
             <i class="fa fa-minus"></i>
         </h4>
         <div class="row bloc_1">
@@ -48,7 +48,7 @@
     @if(count($sectors))
     <div class="col-md-12" style="margin-top: 10px; border: 0px solid silver;">
         <h4 class="bloc" rel="2">
-            <strong>2-Fund Sector Allocation:</strong>
+            <strong>2- Fund Sector Allocation:</strong>
             <i class="fa fa-minus"></i>
         </h4> 
         <div class="row bloc_2">
@@ -87,7 +87,7 @@
     @if(count($countrys))
     <div class="col-md-12" style="margin-top: 10px; border: 0px solid silver;">
         <h4 class="bloc" rel="3">
-            <strong>3-Fund Country Weights:</strong>
+            <strong>3- Fund Country Weights:</strong>
             <i class="fa fa-minus"></i>
         </h4>
         <div class="row bloc_3">
