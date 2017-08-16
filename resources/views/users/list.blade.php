@@ -10,7 +10,6 @@
         </div>
         
         <div class="col-md-12 table-responsive">
-            
             @if(count($users))
                 <table id="datatable" class="table table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
@@ -56,27 +55,6 @@
                     <p>No users in the Database</p>
                 </div>
             @endif
-            
-            
-            
-<!--            <div class="col-xs-12 table-responsive">
-                
-                
-                
-                <table class="stripe hover row-border- cell-border order-column table" id="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Created At</th>
-                            <th>Updated At</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>-->
-            
         </div>
         
     </div>

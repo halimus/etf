@@ -22,23 +22,25 @@ Route::middleware(['auth'])->group(function () {
     
     //Etf routes
     Route::get('/etf', 'EtfController@index');
+    Route::delete('/etf/{id}', 'EtfController@destroy');
     Route::get('/logs', 'EtfController@logs');
 
+    
     //Users routes
     Route::get('/users', 'UsersController@index');
     Route::get('/users/getdata', 'UsersController@getUsers');
-    Route::get('users/create', 'UsersController@create');
-    Route::post('users/create', 'UsersController@store');
-    Route::get('users/{id}', 'UsersController@show');
-    Route::get('users/{id}/edit/', 'UsersController@edit');
-    Route::post('users/{id}/edit/', 'UsersController@update');
-    Route::delete('users/{id}', 'UsersController@destroy');
+    Route::get('/users/create', 'UsersController@create');
+    Route::post('/users/create', 'UsersController@store');
+    Route::get('/users/{id}', 'UsersController@show');
+    Route::get('/users/{id}/edit/', 'UsersController@edit');
+    Route::post('/users/{id}/edit/', 'UsersController@update');
+    Route::delete('/users/{id}', 'UsersController@destroy');
 
     //Profile & Change_password routes
-    Route::get('profile',  'ProfileController@profile_form');
-    Route::post('profile',  'ProfileController@update_profile');
-    Route::get('change_password',  'ProfileController@password_form');
-    Route::post('change_password', 'ProfileController@update_password');
+    Route::get('/profile',  'ProfileController@profile_form');
+    Route::post('/profile',  'ProfileController@update_profile');
+    Route::get('/change_password',  'ProfileController@password_form');
+    Route::post('/change_password', 'ProfileController@update_password');
 
     //About & Help routes
     Route::get('/about', 'HelpController@about');

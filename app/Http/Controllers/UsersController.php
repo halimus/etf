@@ -142,7 +142,7 @@ class UsersController extends Controller {
         if (!$user) {
             Session::flash('notif_type', 'danger');
             Session::flash('notif', 'Could not find the user!');
-            return redirect("users/$id/edit");
+            return redirect("users");
         }
         
         $user->delete();
