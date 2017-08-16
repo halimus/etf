@@ -1,4 +1,3 @@
-
 ## About etf
 This application is created for a Test Assignment purpose 2017.
 
