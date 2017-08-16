@@ -63,4 +63,16 @@ class LoginController extends Controller
             return back()->withErrors(array('Email or password incorrect!'))->withInput();
         }
     }
+    
+    /**
+     * Log the user out of the application.
+     *
+     */
+    public function logout(Request $request) {
+        //Auth::logout();
+        $this->guard()->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect($this->redirectAfterLogout);
+    }
 }
