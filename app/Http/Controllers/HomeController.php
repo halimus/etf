@@ -59,13 +59,12 @@ class HomeController extends Controller {
                     Session::flash('notif', 'Could not find this ETF!');
                     return redirect("/");
                 }
-                $etf = Etf::where('etf_name', $input)->first();
+                $etf = Etf::where('etf_name', $input)->first(); // get the etf after inserted in db
             }
             
             $holdings = DB::table('holding')->where('etf_id', $etf->etf_id)->get();
             $sectors  = DB::table('sector')->where('etf_id',  $etf->etf_id)->get();
             $countrys = DB::table('country')->where('etf_id', $etf->etf_id)->get();
-
         }
         return view('home', compact('title', 'etf', 'holdings', 'sectors', 'countrys'));
     }

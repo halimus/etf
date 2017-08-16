@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use App\Models\Etf;
-use App\Models\Logs;
 
 class EtfController extends Controller {
     
@@ -29,19 +28,25 @@ class EtfController extends Controller {
     }
     
     /**
-     * Display Logs page.
+     * Display the specified resource.
      *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function logs() {
-        $title = 'Logs';
+    public function show($id) {
+        $title = 'ETF';
+        $etf = Etf::find($id);
+        if (!$etf) {
+            Session::flash('notif_type', 'danger');
+            Session::flash('notif', 'Could not find the ETF!');
+            return redirect("etf");
+        }
         
-        $logs = DB::table('logs')
-                ->join('users', 'logs.user_id', '=', 'users.user_id')
-                ->select('logs.*', 'users.name', 'users.username')
-                ->get();
+        $holdings = DB::table('holding')->where('etf_id', $etf->etf_id)->get();
+        $sectors  = DB::table('sector')->where('etf_id',  $etf->etf_id)->get();
+        $countrys = DB::table('country')->where('etf_id', $etf->etf_id)->get();
         
-        return view('etf.logs', compact('title', 'logs'));
+        return view('etf.show', compact('title', 'etf', 'holdings', 'sectors', 'countrys'));
     }
     
     /**
@@ -61,5 +66,23 @@ class EtfController extends Controller {
         Session::flash('flash_message', 'ETF has been deleted!');
         return redirect('etf');
     }
+    
+    /**
+     * Display Logs page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logs() {
+        $title = 'Logs';
+        
+        $logs = DB::table('logs')
+                ->join('users', 'logs.user_id', '=', 'users.user_id')
+                ->select('logs.*', 'users.name', 'users.username')
+                ->get();
+        
+        return view('etf.logs', compact('title', 'logs'));
+    }
+    
+
     
 }

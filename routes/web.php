@@ -22,6 +22,7 @@ Route::middleware(['auth'])->group(function () {
     
     //Etf routes
     Route::get('/etf', 'EtfController@index');
+    Route::get('/etf/{id}', 'EtfController@show');
     Route::delete('/etf/{id}', 'EtfController@destroy');
     Route::get('/logs', 'EtfController@logs');
 
