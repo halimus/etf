@@ -12,9 +12,7 @@ Technologies used:
 https://demo.halimlardjane.com/etf
 
 **The access infos:**
-
 Email address: admin@domain.com
-
 Password: 1234
 
 
