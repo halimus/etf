@@ -1,4 +1,4 @@
-## About etf
+## About ETF
 This application is created for a Test Assignment purpose 2017.
 
 Technologies used:
