@@ -11,9 +11,14 @@ Technologies used:
 ## Demo : 
 https://demo.halimlardjane.com/etf
 
-**The access infos:**<br>
+**The credentials infos:**<br>
 Email address: admin@domain.com<br>
 Password: 1234
+
+## Database : 
+
+![alt tag](https://github.com/halimus/etf/blob/master/public/images/mpd.png)
+
 
 
 
