@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\Etf;
 use App\Helpers\Curl;
@@ -14,7 +15,7 @@ use App\Helpers\Tools;
 class HomeController extends Controller {
 
     public $uri = 'https://www.spdrs.com/product/fund.seam?ticker=';
-
+    
     /**
      * Create a new controller instance.
      *
@@ -44,7 +45,12 @@ class HomeController extends Controller {
         $input = trim($request->search);
         if (!empty($input)) {
             
-            $etf = Etf::where('etf_name', $input)->first();
+            //log the sumbol requested
+            DB::table('logs')->insert(
+                ['symbol' => $input, 'ip_address' => $request->ip(), 'user_id' => Auth::user()->user_id]
+            );
+            
+            $etf = Etf::where('etf_name', $input)->first(); //try to get the ETF from db
             
             if(empty($etf)){
                 $inserted = $this->ParseAndInsert($input);
@@ -118,7 +124,7 @@ class HomeController extends Controller {
                 'etf_name' => $etf_name,
                 'description' => $description,
                 'etf_date' => Carbon::parse($etf_date)->format('Y-m-d'),
-                'user_id' => 1
+                'user_id' => Auth::user()->user_id
             ]);
 
             // 2- Insert top_holding
