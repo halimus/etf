@@ -9,6 +9,21 @@
 
         <div class="col-md-12">
             
+            @if($errors->any()) 
+            <ul class="errors alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            @endif
+            
+            @if(Session::has('notif'))
+            <div class="errors alert alert-{{ Session::get('notif_type') }} alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                <p>{{ Session::get('notif') }}</p>
+            </div>
+            @endif 
             
             <form method="POST" action="{{ url('/change_password') }}" role="form" >
                 {{ csrf_field() }}
@@ -16,12 +31,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row form-group">
-                            <div class="col-md-6 {{ $errors->has('old_password') ? ' has-error' : '' }}">
+                            <div class="col-md-6 {{ $errors->has('current_password') ? ' has-error' : '' }}">
                                 <label>Old Password</label><em>*</em>
-                                <input type="password" name="old_password" id="old_password" class="form-control" value="">
-                                @if ($errors->has('old_password'))
+                                <input type="password" name="current_password" id="current_password" class="form-control" value="">
+                                @if ($errors->has('current_password'))
                                 <span class="form-error">
-                                    {{ $errors->first('old_password') }}
+                                    {{ $errors->first('current_password') }}
                                 </span>
                                 @endif
                             </div>
