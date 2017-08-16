@@ -11,7 +11,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <div class="input-group">
-                        <input  type="text" id="search"  name="search" class="form-control" placeholder="Search ETF..." value="DGT" required>
+                        <input  type="text" id="search" name="search" class="form-control" placeholder="Search ETF..." value="{{ old('search') }}" required>
                         <span class="input-group-btn">
                             <button class="btn btn-primary" type="submit">
                                 <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
