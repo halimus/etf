@@ -138,17 +138,19 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $user = User::findOrFail($id);
+        //$user = User::findOrFail($id);
+        $user = User::find($id);
         if (!$user) {
             Session::flash('notif_type', 'danger');
             Session::flash('notif', 'Could not find the user!');
             return redirect("users");
         }
-        
-        $user->delete();
-        Session::flash('flash_message', 'User has been deleted!');
-        //Session::flash('flash_message_important', true);
-        //Session::flash('error', 'The old password is incorect');
+        if($user->user_id !=1){ // you cannot delete admin
+            $user->delete();
+            Session::flash('flash_message', 'User has been deleted!');
+            //Session::flash('flash_message_important', true);
+            //Session::flash('error', 'The old password is incorect')
+        }
         return redirect('users');
     }
     

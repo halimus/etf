@@ -37,13 +37,12 @@
                                 <a href="{{ url("users/$user->user_id/edit")}}" class="btn btn-success" role="button"><i class="fa fa-pencil"></i></a>
                             </td>
                             <td>
-                                {{ Form::open(array('url' => 'users/' . $user->user_id)) }}
-                                {{ Form::hidden('_method', 'DELETE') }}
-                                {{ Form::button('<i class="fa fa-trash-o"></i>', ['class' => 'btn btn-danger btn-block', 'type' => 'submit']) }} 
-                                {{ Form::close() }}
-                                
-                                <!--<button class="btn btn-danger btn" type="button"><i class="fa fa-trash-o"></i></button>-->
-                                
+                                @if($user->user_id !=1)
+                                    {{ Form::open(array('url' => 'users/' . $user->user_id)) }}
+                                    {{ Form::hidden('_method', 'DELETE') }}
+                                    {{ Form::button('<i class="fa fa-trash-o"></i>', ['class' => 'btn btn-danger btn-block', 'type' => 'submit']) }} 
+                                    {{ Form::close() }}
+                                 @endif
                             </td>
                         </tr>
                         @endforeach   
