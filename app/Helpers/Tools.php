@@ -15,11 +15,9 @@ class Tools {
             echo '<pre>';
             print_r($data);
             echo '</pre>';
-            die('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
         }
         else{
             echo '<br>'.$data;
-            die('cccc');
         }
         if($stop) exit( '<br><br>(string) Debug Stop... ');
     }
