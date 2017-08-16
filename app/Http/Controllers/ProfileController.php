@@ -31,8 +31,19 @@ class ProfileController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update_profile(Request $request) {
-        $title = 'Profile';
-        return view('profile.info', compact('title'));     
+        $user = Auth::user();
+        
+        $rules = $this->rules_profile($user->user_id);
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        } 
+        
+        $user->update($request->all());
+        
+        Session::flash('notif_type', 'success');
+        Session::flash('notif', 'Your profile has been updated!'); 
+        return redirect('profile');    
     }
     
     
@@ -87,5 +98,21 @@ class ProfileController extends Controller {
         return redirect('change_password');
         //return view('profile.password', compact('title'));  
     }
+    
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules_profile($user_id) {
+        return [
+            'name' => 'required|min:3|max:15',
+            //'username' => 'required|max:25|unique:users';  
+            'email' => 'required|email|max:45|unique:users,email, ' . $user_id . ',user_id'
+        ];
+    }
 
 }
+
+
+            ; 
