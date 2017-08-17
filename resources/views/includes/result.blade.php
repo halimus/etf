@@ -117,21 +117,21 @@
                     </thead>
                     <tbody>
                         <?php 
-                           $country_data = ''; // data for the country                          
-                           $nbr_country = count($countrys);
-                           foreach ($countrys as $country) {
-                                echo '
-                                <tr>
-                                    <td>'.$country->country_name.'</td>
-                                    <td>'.$country->weight.' %</td>
-                                </tr>';
-                                if(Auth::user()->chart_id==2){ //data for amCharts
-                                    $country_data .='{"country": "'.$country->country_name.'", "weight": '.$country->weight.'},';
-                                }
-                                else{ ////data for Highchars 
-                                    $country_data.='{name: "'.$country->country_name.'", y: '.$country->weight.'},';
-                                }
-                           }
+                            $country_data = ''; // data for the country                          
+                            $nbr_country = count($countrys);
+                            foreach ($countrys as $country) {
+                                 echo '
+                                 <tr>
+                                     <td>'.$country->country_name.'</td>
+                                     <td>'.$country->weight.' %</td>
+                                 </tr>';
+                                 if(Auth::user()->chart_id==2){ //data for amCharts
+                                     $country_data .='{"country": "'.$country->country_name.'", "weight": '.$country->weight.'},';
+                                 }
+                                 else{ ////data for Highchars 
+                                     $country_data.='{name: "'.$country->country_name.'", y: '.$country->weight.'},';
+                                 }
+                            }
                            
                             if(Auth::user()->chart_id==2){
                                if($nbr_country<=18) $increase_height_css_class = ' increase_x1';
