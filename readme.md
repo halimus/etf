@@ -9,7 +9,7 @@ Technologies used:
 - [Highcharts](https://www.highcharts.com/).
 - [amCharts](https://www.amcharts.com/).
 
-** Features:**
+**Features:**
 - Beautiful Custom template
 - Responsive 
 - Export data to CSV
