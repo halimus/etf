@@ -111,7 +111,7 @@ For more informations about the requirement, please check in [Laravel documentio
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/14.jpg)
 
 
-![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/csv.jpg)
+![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/export.jpg)
 
 
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/15.jpg)
