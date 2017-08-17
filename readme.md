@@ -39,7 +39,8 @@ For more informations about the requirement, please check in [Laravel documentio
 
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/3.jpg)
 
-    
+ 
+<br><br>
 **4- Update the cresentials of database in the .env file:**
 
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/4.jpg)
