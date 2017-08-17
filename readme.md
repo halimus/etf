@@ -24,7 +24,7 @@ https://demo.halimlardjane.com/etf
 Email address: admin@domain.com<br>
 Password: 123456
 
-## Database : 
+## Database schema: 
 
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/mpd.png)
 
