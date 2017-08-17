@@ -9,6 +9,14 @@ Technologies used:
 - [Highcharts](https://www.highcharts.com/).
 - [amCharts](https://www.amcharts.com/).
 
+**3- Features:**
+- Beautiful Custom template
+- Responsive 
+- Export data to CSV
+- Manage users
+- Log actions
+- Easy to switch between 2 types of chart (Highcharts or amCharts)
+
 ## Demo : 
 https://demo.halimlardjane.com/etf
 
