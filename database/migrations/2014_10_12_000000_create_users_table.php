@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 25)->unique();
             $table->string('email', 45)->unique();
             $table->string('password');
+            $table->smallInteger('chart_id')->default(1)->comment = "1:Highcharts 2:amCharts";
             $table->rememberToken();
             $table->timestamps();
         });
