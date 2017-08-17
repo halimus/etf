@@ -74,6 +74,21 @@ For more informations about the requirement, please check in [Laravel documentio
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/10.jpg)
 
 
+![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/11.jpg)
+
+
+![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/12.jpg)
+
+
+![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/13.jpg)
+
+
+![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/14.jpg)
+
+
+![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/15.jpg)
+
+
 
 ## License
 
