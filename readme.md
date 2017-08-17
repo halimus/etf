@@ -34,7 +34,7 @@ For more informations about the requirement, please check in [Laravel documentio
 
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/2.jpg)
 
-<br>
+<br><br>
 **3- Create a new file .env (This file is copy of .env.example):**
 <br>
 
