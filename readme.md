@@ -4,7 +4,7 @@ This application is created for a Test Assignment purpose 2017.
 Technologies used:
 
 - [PHP Laravel Framework (5.4)](https://laravel.com/).
-- MySQL for the Database
+- [MySQL Database](https://www.mysql.com/).
 - [CSS Bootstrap](http://getbootstrap.com/).
 - [jQuery](https://jquery.com/).
 - [Highcharts](https://www.highcharts.com/).
