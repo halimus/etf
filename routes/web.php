@@ -37,11 +37,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/users/{id}/edit/', 'UsersController@update');
     Route::delete('/users/{id}', 'UsersController@destroy');
 
-    //Profile & Change_password routes
+    //Profile & Change_password routes & switch chart
     Route::get('/profile',  'ProfileController@profile_form');
     Route::post('/profile',  'ProfileController@update_profile');
     Route::get('/change_password',  'ProfileController@password_form');
     Route::post('/change_password', 'ProfileController@update_password');
+    Route::post('/chart', 'ProfileController@switch_chart');
 
     //About & Help routes
     Route::get('/about', 'HelpController@about');
