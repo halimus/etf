@@ -4,6 +4,7 @@
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="{{ asset('js/jquery.tabletoCSV.js') }}" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
  // holding_chart    
