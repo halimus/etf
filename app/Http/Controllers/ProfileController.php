@@ -111,8 +111,24 @@ class ProfileController extends Controller {
             'email' => 'required|email|max:45|unique:users,email, ' . $user_id . ',user_id'
         ];
     }
-
+    
+    /**
+     * 
+     * @param Request $request
+     */
+    public function switch_chart(Request $request) {
+        $user = Auth::user();
+ 
+        $user->update(['chart_id' => $request->get('chart_id')]);
+        
+        Session::flash('notif_type', 'success');
+        Session::flash('notif', 'The Chart has been switched!');
+        
+        return redirect('help');
+            
+    }
+    
 }
 
 
-            ; 
+           
