@@ -11,8 +11,7 @@ Technologies used:
 - [amCharts](https://www.amcharts.com/).
 
 **Features:**
-- Beautiful Custom template
-- Responsive 
+- Responsive & Beautiful custom template
 - Export data to CSV
 - Manage users
 - Log actions
