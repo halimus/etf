@@ -69,6 +69,10 @@ For more informations about the requirement, please check in [Laravel documentio
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/9.jpg)
 
 
+## Screenshot: 
+
+![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/10.jpg)
+
 
 
 ## License
