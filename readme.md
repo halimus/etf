@@ -26,7 +26,15 @@ Password: 1234
 So, maybe you need to have the requirement in your computer before install this application.<br>
 For more informations about the requirement, please check in [Laravel documention](https://laravel.com/docs/5.4#server-requirements).<br>*
 
+1- Use Composer to install dependencies:
 
+    cd /path/to/etf
+
+    composer install
+    
+
+    
+    
 
 
 
