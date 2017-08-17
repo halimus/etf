@@ -258,3 +258,17 @@ bloc
 #holding_chart{min-height: 600px;}
 #sector_chart{min-height: 500px;}
 #country_chart{min-height: 700px;}
+
+.increase_x1 #sector_chart{min-height: 520px;}
+.increase_x1 #country_chart{min-height: 700px;} /*  >=24 -> 1000  <24 850   <=18  700     */
+.increase_x2 #country_chart{min-height: 850px;}
+.increase_x3 #country_chart{min-height: 1000px;}
+
+
+/* Switch button */
+.btn-default.btn-on.active, .btn-default.btn-on:focus{
+    background-color: #5BB75B;color: #fff;
+}
+.btn-default.btn-off.active, .btn-default.btn-off.active:focus{
+    background-color: #5BB75B;color: #fff;
+}
