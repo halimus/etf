@@ -22,9 +22,12 @@ Password: 1234
 
 
 ## Installation: 
-This application is developed with Laravel Framework 5.4.<br>
+*This application is developed with Laravel Framework 5.4.<br>
 So, maybe you need to have the requirement in your computer before install this application.<br>
-For more informations about the requirement, please check in [Laravel documention](https://laravel.com/docs/5.4#server-requirements).<br>
+For more informations about the requirement, please check in [Laravel documention](https://laravel.com/docs/5.4#server-requirements).<br>*
+
+
+
 
 
 
