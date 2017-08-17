@@ -29,4 +29,4 @@ Password: 1234
 
 ## License
 
-This application is open-source licensed under the [My license](http://halim.lardjane.com/).
+This application is open-source licensed under [My license](http://halim.lardjane.com/).
