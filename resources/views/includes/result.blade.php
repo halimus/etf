@@ -22,6 +22,7 @@
                     </thead>
                     <tbody>
                         <?php 
+                           $i=0;
                            $holdings_data = ''; // data for the chart
                            foreach ($holdings as $holding) {
                                 echo '
@@ -29,7 +30,15 @@
                                     <td>'.$holding->holding_name.'</td>
                                     <td>'.$holding->weight.' %</td>
                                 </tr>';
-                                $holdings_data.='["'.$holding->holding_name.'", '.$holding->weight.'],';
+                                
+                                if(Auth::user()->chart_id==2){ //data for amCharts
+                                    $i++;
+                                    $color = App\Helpers\Tools::getColor($i);
+                                    $holdings_data .='{"holding": "'.$holding->holding_name.'", "weight": '.$holding->weight.',"color": "'.$color.'" },';
+                                }
+                                else{ ////data for Highchars 
+                                    $holdings_data.='["'.$holding->holding_name.'", '.$holding->weight.'],';
+                                } 
                            }
                         ?>
                     </tbody>
@@ -68,14 +77,22 @@
                                     <td>'.$sector->sector_name.'</td>
                                     <td>'.$sector->weight.' %</td>
                                 </tr>';
-                                $sectors_data.='{name: "'.$sector->sector_name.'", y: '.$sector->weight.'},'; 
+                                if(Auth::user()->chart_id==2){ //data for amCharts
+                                    $sectors_data .='{"sector": "'.$sector->sector_name.'", "weight": '.$sector->weight.'},';
+                                }
+                                else{ ////data for Highchars 
+                                    $sectors_data.='{name: "'.$sector->sector_name.'", y: '.$sector->weight.'},'; 
+                                } 
+                           }
+                           if(Auth::user()->chart_id==2){
+                                $increase_height_css_class = ' increase_x1';
                            }
                         ?>
                     </tbody>
                 </table>
                 <button type="button" class="btn btn-success btn-sm export" rel="2">Export to CSV</button>
             </div>
-            <div class="col-md-8" style="border: 0px dotted green;">
+            <div class="col-md-8{{ @$increase_height_css_class }}">
                 <div id="sector_chart"></div>
             </div>
         </div>      
@@ -100,21 +117,33 @@
                     </thead>
                     <tbody>
                         <?php 
-                           $country_data = ''; // data for the country
+                           $country_data = ''; // data for the country                          
+                           $nbr_country = count($countrys);
                            foreach ($countrys as $country) {
                                 echo '
                                 <tr>
                                     <td>'.$country->country_name.'</td>
                                     <td>'.$country->weight.' %</td>
                                 </tr>';
-                                $country_data.='{name: "'.$country->country_name.'", y: '.$country->weight.'},';
+                                if(Auth::user()->chart_id==2){ //data for amCharts
+                                    $country_data .='{"country": "'.$country->country_name.'", "weight": '.$country->weight.'},';
+                                }
+                                else{ ////data for Highchars 
+                                    $country_data.='{name: "'.$country->country_name.'", y: '.$country->weight.'},';
+                                }
                            }
+                           
+                            if(Auth::user()->chart_id==2){
+                               if($nbr_country<=18) $increase_height_css_class = ' increase_x1';
+                               elseif($nbr_country< 23) $increase_height_css_class = ' increase_x2';
+                               else $increase_height_css_class = ' increase_x3';
+                            }
                         ?>
                     </tbody>
                 </table>
                 <button type="button" class="btn btn-success btn-sm export" rel="3">Export to CSV</button>
             </div>
-            <div class="col-md-8" style="border: 0px dotted green;">
+            <div class="col-md-8{{ @$increase_height_css_class }}">
                 <div id="country_chart"></div>
             </div>
         </div>      
@@ -124,147 +153,23 @@
 </div>
 
 @push('scripts')
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="{{ asset('js/jquery.tabletoCSV.js') }}" type="text/javascript" charset="utf-8"></script>
 
-<script type="text/javascript">
-    // holding_chart
-    Highcharts.chart('holding_chart', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Fund Top Holdings'
-        },
-        subtitle: {
-            text: 'DGT'
-        },
-        xAxis: {
-            type: 'category',
-            labels: {
-                rotation: -45,
-                style: {
-                    fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Weight (%)'
-            }
-        },
-        legend: {
-            enabled: false
-        },
-        tooltip: {
-            pointFormat: 'Weight: <b>{point.y:.2f} %</b>'
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'holding',
-            //color: '#81B33B',
-            data: [<?php echo $holdings_data;?>],
-            dataLabels: {
-                enabled: true,
-                rotation: -90,
-                color: '#FFFFFF',
-                align: 'right',
-                format: '{point.y:.2f}', // two decimal
-                y: 10, // 10 pixels down from the top
-                style: {
-                    fontSize: '12px',
-                    fontFamily: 'Verdana, sans-serif'
-                }
-            }
-        }]
-    });
+    @if(Auth::user()->chart_id == 2)
+        @include('includes.chart.amcharts')
+    @else
+        @include('includes.chart.highcharts')
+    @endif
     
-    // sector_chart
-    Highcharts.chart('sector_chart', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Fund Sector Allocation'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.2f}%</b>'
-        },
-        credits: {
-            enabled: false
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.2f} %',
-                    style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Sector',
-            colorByPoint: true,
-            data: [<?php echo $sectors_data;?>]
-        }]
-    });
-    
-    <?php if(!empty($country_data)){ ?>
-    // country_chart
-    Highcharts.chart('country_chart', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Fund Sector Allocation'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.2f}%</b>'
-        },
-        credits: {
-            enabled: false
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false,
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            name: 'Sector',
-            colorByPoint: true,
-            data: [<?php echo $country_data;?>]
-        }]
-    });
-    <?php } ?>
+    <script>
+        /**
+        * Export to CSV file
+        */
+       $(function () {
+           $(".export").click(function () {
+               var id = $(this).attr('rel');
+               $("#table_" + id).tableToCSV();
+           });
+       });
+    </script>
 
-    /**
-     * Export to CSV file
-     */
-    $(function(){
-        $(".export").click(function(){
-            var id = $(this).attr('rel');
-            $("#table_"+id).tableToCSV();
-        });
-    });
-</script>
 @endpush
