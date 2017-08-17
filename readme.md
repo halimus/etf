@@ -36,9 +36,13 @@ For more informations about the requirement, please check in [Laravel documentio
 
 **1- Pull up the application to your machine:**
 
+    git clone https://github.com/halimus/etf.git
+
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/1.jpg)
 
 **2- Use Composer to install dependencies:**
+
+    composer install
 
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/2.jpg)
 
@@ -46,6 +50,8 @@ For more informations about the requirement, please check in [Laravel documentio
 
 **3- Create a new file .env (This file is copy of .env.example):**
 <br>
+
+    cp .env.example .env
 
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/3.jpg)
 
@@ -58,6 +64,8 @@ For more informations about the requirement, please check in [Laravel documentio
 
 **5- Generate a Laravel key:**
 
+    php artisan key:generate
+
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/5.jpg)
 
 **6- Create a MySQL database and choose a name as you want (This name should match with the name in the .env file):**
@@ -67,15 +75,21 @@ For more informations about the requirement, please check in [Laravel documentio
 
 **7- Run migration to migrate the database structure:**
 
+    php artisan migrate
+
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/7.jpg)
 
 
 **8- Run database seeder to populate database with 2 users by default:**
 
+    php artisan db:seed
+
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/8.jpg)
 
 
 **9- Run the server:**
+
+    php artisan serve
 
 ![alt tag](https://github.com/halimus/etf/blob/master/public/images/install/9.jpg)
 
