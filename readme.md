@@ -7,6 +7,7 @@ Technologies used:
 - [CSS Bootstrap](http://getbootstrap.com/).
 - [jQuery](https://jquery.com/).
 - [Highcharts](https://www.highcharts.com/).
+- [amCharts](https://www.amcharts.com/).
 
 ## Demo : 
 https://demo.halimlardjane.com/etf
