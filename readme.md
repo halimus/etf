@@ -22,7 +22,7 @@ https://demo.halimlardjane.com/etf
 
 **The credentials infos:**<br>
 Email address: admin@domain.com<br>
-Password: 1234
+Password: 123456
 
 ## Database : 
 
