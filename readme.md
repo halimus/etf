@@ -13,10 +13,10 @@ US Equities sections of spdrs.com website.
 2.  Protect the page with a login (username and password). Login information is stored in a 
     database. 
     
-            a.  Create a page for adding new users (information requested: username, password, 
+      a.  Create a page for adding new users (information requested: username, password, 
         name, email)
    
-            b.  Store requested symbols for each user in a database, encrypt passwords. Display history 
+      b.  Store requested symbols for each user in a database, encrypt passwords. Display history 
         of requested symbols to the user. 
 
 ## Assignment details a nd clarification
