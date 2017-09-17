@@ -6,14 +6,17 @@ store it in a database. Display results to the user as HTML table and provide do
 CSV file. If the same symbol is requested again, retrieve it from local database instead of parsing 
 the site again. For testing purposes only use ETFs found under Global/International Equities and 
 US Equities sections of spdrs.com website.
+   
    a.  Display charts for top 10 holdings (bar chart), Country and Sector Weights (pie charts) 
        along with the table.
 
 2.  Protect the page with a login (username and password). Login information is stored in a 
     database. 
+    
     a.  Create a page for adding new users (information requested: username, password, 
         name, email)
-    b.  Store requested symbols for each user in a database, encrypt passwords. Display history 
+   
+   b.  Store requested symbols for each user in a database, encrypt passwords. Display history 
         of requested symbols to the user. 
 
 ## Assignment details a nd clarification
@@ -24,8 +27,11 @@ User input should be accepted via web (create a simple form where user can suppl
 
 ## Technology:
 Programming language: PHP with a framework (Laravel is preferred but any framework is ok)
+
 Database: MySQL is preferred but not required
+
 Charts: building charts using D3, AmCharts or similar library
+
 Use of HTML parsing libraries, CSS and frameworks are allowed
 
 It is preferred if the completed assignment is presented as a working page online. Code and database 
