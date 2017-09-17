@@ -33,7 +33,7 @@ export will need to be presented as well, along with installation and compilatio
 
 
 
-## About ETF
+## My Solution:
 This application is created for a Test Assignment purpose 2017.
 
 Technologies used:
