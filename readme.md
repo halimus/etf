@@ -26,13 +26,13 @@ located under Holdings tab)
 User input should be accepted via web (create a simple form where user can supply ETF symbol)
 
 ## Technology:
-      Programming language: PHP with a framework (Laravel is preferred but any framework is ok)
+- Programming language: PHP with a framework (Laravel is preferred but any framework is ok)
 
-      Database: MySQL is preferred but not required
+- Database: MySQL is preferred but not required
 
-      Charts: building charts using D3, AmCharts or similar library
+- Charts: building charts using D3, AmCharts or similar library
 
-      Use of HTML parsing libraries, CSS and frameworks are allowed
+- Use of HTML parsing libraries, CSS and frameworks are allowed
 
 It is preferred if the completed assignment is presented as a working page online. Code and database 
 export will need to be presented as well, along with installation and compilation instructions.
