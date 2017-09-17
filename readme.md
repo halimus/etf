@@ -19,7 +19,7 @@ US Equities sections of spdrs.com website.
       b.  Store requested symbols for each user in a database, encrypt passwords. Display history 
         of requested symbols to the user. 
 
-## Assignment details a nd clarification
+## Assignment details and clarification
 Sample State Street ETF page: https://www.spdrs.com/product/fund.seam?ticker=SPY (top holdings are 
 located under Holdings tab)
 
