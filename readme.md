@@ -1,3 +1,38 @@
+
+# Test assignment
+1.  Parse Top 10 Holdings, Country Weights and Sector Weights, ETF name and fund description
+information for ETFs requested by the user from State Street ETF page (http://spdrs.com) and 
+store it in a database. Display results to the user as HTML table and provide download link to 
+CSV file. If the same symbol is requested again, retrieve it from local database instead of parsing 
+the site again. For testing purposes only use ETFs found under Global/International Equities and 
+US Equities sections of spdrs.com website.
+   a.  Display charts for top 10 holdings (bar chart), Country and Sector Weights (pie charts) 
+       along with the table.
+
+2.  Protect the page with a login (username and password). Login information is stored in a 
+    database. 
+    a.  Create a page for adding new users (information requested: username, password, 
+        name, email)
+    b.  Store requested symbols for each user in a database, encrypt passwords. Display history 
+        of requested symbols to the user. 
+
+## Assignment details a nd clarification
+Sample State Street ETF page: https://www.spdrs.com/product/fund.seam?ticker=SPY (top holdings are 
+located under Holdings tab)
+
+User input should be accepted via web (create a simple form where user can supply ETF symbol)
+
+## Technology:
+Programming language: PHP with a framework (Laravel is preferred but any framework is ok)
+Database: MySQL is preferred but not required
+Charts: building charts using D3, AmCharts or similar library
+Use of HTML parsing libraries, CSS and frameworks are allowed
+
+It is preferred if the completed assignment is presented as a working page online. Code and database 
+export will need to be presented as well, along with installation and compilation instructions.
+
+
+
 ## About ETF
 This application is created for a Test Assignment purpose 2017.
 
