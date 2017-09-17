@@ -6,8 +6,8 @@ store it in a database. Display results to the user as HTML table and provide do
 CSV file. If the same symbol is requested again, retrieve it from local database instead of parsing 
 the site again. For testing purposes only use ETFs found under Global/International Equities and 
 US Equities sections of spdrs.com website.
-   
-   a.  Display charts for top 10 holdings (bar chart), Country and Sector Weights (pie charts) 
+      
+      a.  Display charts for top 10 holdings (bar chart), Country and Sector Weights (pie charts) 
        along with the table.
 
 2.  Protect the page with a login (username and password). Login information is stored in a 
